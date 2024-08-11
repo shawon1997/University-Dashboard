@@ -24,9 +24,9 @@ ChartJS.register(
 );
 
 function MyPerformance({ studentId }) {
-  const student = students.find(s => s.id === studentId);
-  const subjects = Object.keys(student.marks);
-  const marks = Object.values(student.marks);
+  const student = students?.find(s => s.id === studentId);
+  const subjects = Object.keys(student?.stream||"Arts");
+  const marks = Object.values(student?.marks||70);
 
   // Bar chart data
   const barData = {

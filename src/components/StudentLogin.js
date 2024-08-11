@@ -10,13 +10,11 @@ function StudentLogin({ onLogin }) {
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    console.log("jbdsvfjsjfsj", StudentSignUpData,username,password);
     const student = StudentSignUpData.find((s) => s.userName === username);
-    console.log('ksjabhdj',student);
     if (student && password === student?.password) {
       onLogin(true, student.id);
       alert("Student Login Successfully!");
-      navigate("/performance");
+      navigate("/my-profile");
     } else {
       alert("Invalid credentials");
       navigate("/signup");
